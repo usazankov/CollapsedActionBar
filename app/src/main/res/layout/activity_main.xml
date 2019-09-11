@@ -41,18 +41,43 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <TextView
-            android:id="@+id/coupons_lst"
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/sv_main"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></TextView>
-    </android.support.v4.widget.NestedScrollView>
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:layout_above="@id/ll_bottom"
+            >
+
+            <TextView
+                android:id="@+id/coupons_lst"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></TextView>
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:elevation="8dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
 </android.support.design.widget.CoordinatorLayout>
